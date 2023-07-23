@@ -5,6 +5,8 @@
 #include <avr/pgmspace.h> // not required for primary operations.
 #include <stdlib.h>
 
+
+//git token: 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
 //Target: = Atmega2560 @ 16 MHz (tested)
 //---------------DEFINITIONS--------------------------
 
@@ -135,7 +137,7 @@ void LCD_String_xy (char row, char pos, char *str)	/* Send string to LCD with xy
 void LCD_Clear()
 {
 	LCD_Command (0x01);					/* Clear display */
-	_delay_ms(2);
+	_delay_ms(3);
 	LCD_Command (0x80);					/* Cursor 1st row 0th position */
 }
 
@@ -151,7 +153,7 @@ int main()
 	LCD_cursor_blink();
 	LCD_String("EnthusiasticGeek");		/* Write string on 1st line of LCD*/
 	LCD_Command(0xc0);					/* Go to 2nd line*/
-	LCD_String("Happy Coding!");			/* Write string on 2nd line*/
+	LCD_String("trial Coding!");			/* Write string on 2nd line*/
 	//LCD_Clear();
 	//LCD_string_Float(0.034,1,1);
 	//LCD_Clear();

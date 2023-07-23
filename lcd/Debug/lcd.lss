@@ -348,7 +348,7 @@ int main()
 	LCD_Command(0xc0);					/* Go to 2nd line*/
  234:	80 ec       	ldi	r24, 0xC0	; 192
  236:	6e df       	rcall	.-292    	; 0x114 <LCD_Command>
-	LCD_String("Happy Coding!");			/* Write string on 2nd line*/
+	LCD_String("trial Coding!");			/* Write string on 2nd line*/
  238:	81 e1       	ldi	r24, 0x11	; 17
  23a:	92 e0       	ldi	r25, 0x02	; 2
  23c:	e1 df       	rcall	.-62     	; 0x200 <LCD_String>
