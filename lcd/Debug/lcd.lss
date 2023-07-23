@@ -21,11 +21,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   8 .debug_frame  00000150  00000000  00000000  00002b78  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    00000654  00000000  00000000  00002cc8  2**0
+  9 .debug_str    0000065e  00000000  00000000  00002cc8  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    000007c3  00000000  00000000  0000331c  2**0
+ 10 .debug_loc    000007c3  00000000  00000000  00003326  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000068  00000000  00000000  00003adf  2**0
+ 11 .debug_ranges 00000068  00000000  00000000  00003ae9  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -195,7 +195,7 @@ void LCD_Home(void)			//LCD cursor home
  126:	98 b1       	in	r25, 0x08	; 8
  128:	92 60       	ori	r25, 0x02	; 2
  12a:	98 b9       	out	0x08, r25	; 8
- 12c:	00 00       	nop
+ 12c:	00 c0       	rjmp	.+0      	; 0x12e <LCD_Command+0x1a>
  12e:	98 b1       	in	r25, 0x08	; 8
  130:	9d 7f       	andi	r25, 0xFD	; 253
  132:	98 b9       	out	0x08, r25	; 8
@@ -215,12 +215,12 @@ void LCD_Home(void)			//LCD cursor home
  14e:	88 b1       	in	r24, 0x08	; 8
  150:	82 60       	ori	r24, 0x02	; 2
  152:	88 b9       	out	0x08, r24	; 8
- 154:	00 00       	nop
+ 154:	00 c0       	rjmp	.+0      	; 0x156 <LCD_Command+0x42>
  156:	88 b1       	in	r24, 0x08	; 8
  158:	8d 7f       	andi	r24, 0xFD	; 253
  15a:	88 b9       	out	0x08, r24	; 8
- 15c:	83 ef       	ldi	r24, 0xF3	; 243
- 15e:	91 e0       	ldi	r25, 0x01	; 1
+ 15c:	8d ee       	ldi	r24, 0xED	; 237
+ 15e:	92 e0       	ldi	r25, 0x02	; 2
  160:	01 97       	sbiw	r24, 0x01	; 1
  162:	f1 f7       	brne	.-4      	; 0x160 <LCD_Command+0x4c>
  164:	00 c0       	rjmp	.+0      	; 0x166 <LCD_Command+0x52>
